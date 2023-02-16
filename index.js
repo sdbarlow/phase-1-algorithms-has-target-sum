@@ -1,6 +1,22 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+  newArr = array.length;
+  let secondArr = []
+  let comparativeArr = [];
+  for(let i=0; i<array.length; i++){
+    comparativeArr.push(array[i])
+    for(let j=0; (j<array.length); j++){
+      if(i != j){
+        if(array[i]+array[j] === target){
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+  }
+  
+
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -28,7 +44,7 @@ if (require.main === module) {
   console.log("");
 
   console.log("Expecting: false");
-  console.log("=>", hasTargetSum([1, 2, 5], 4));
+  console.log("=>", hasTargetSum([2, 1, 5], 4));
 }
 
 module.exports = hasTargetSum;
